@@ -1,16 +1,34 @@
 # movies_app_task
+[Firebase project link](https://console.firebase.google.com/project/movie-app-task-971f5/overview)
 
-A new Flutter project.
+# Deep Links:
+```
+movieapptask://open
+movieapptask://details_screen/505642
+movieapptask://details_screen/503742
+movieapptask://details_screen/318942
+movieapptask://details_screen/42
+```
+```
+notes:
+first deep link: opens the app in the main screen.
+second deep link: opens the app in the movie details screen.
+third deep link: opens the app in the movie details screen.
+forth deep link: opens the app in the movie details screen with a movie with no image.
+fifth deep link: opens the app in the movie details screen with a bad movie id.
+```
 
-## Getting Started
+note: to test these deepLinks you can use adb commands
 
-This project is a starting point for a Flutter application.
+adb shell 'am start -W -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d "movieapptask://open"'
 
-A few resources to get you started if this is your first Flutter project:
+adb shell 'am start -W -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d "movieapptask://details_screen/505642"'
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+adb shell 'am start -W -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d "movieapptask://details_screen/503742"'
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+adb shell 'am start -W -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d "movieapptask://details_screen/318942"'
+
+adb shell 'am start -W -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d "movieapptask://details_screen/42"'
+
+##
+This is app is build using clean architecture pattern
